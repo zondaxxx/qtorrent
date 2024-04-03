@@ -103,7 +103,7 @@ async def get_buttons(key=None, edit_type=None):
                 "BOT_TOKEN",
                 "DOWNLOAD_DIR",
             ]:
-                msg += "Restart required for this edit to take effect!\n\n"
+                msg += "перезагрузите!\n\n"
             msg += f"Send a valid value for {key}. Current value is '{config_dict[key]}'. Timeout: 60 sec"
         elif edit_type == "ariavar":
             buttons.ibutton("Back", "botset aria")
