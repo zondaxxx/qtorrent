@@ -39,9 +39,9 @@ async def unauthorize(client, message):
         update_user_ldata(id_, "is_auth", False)
         if DATABASE_URL:
             await DbManager().update_user_data(id_)
-        msg = "Unauthorized"
+        msg = "неавторизован
     else:
-        msg = "Already Unauthorized!"
+        msg = "уже не авторизован"
     await sendMessage(message, msg)
 
 
@@ -78,7 +78,7 @@ async def removeSudo(client, message):
             await DbManager().update_user_data(id_)
         msg = "Demoted"
     else:
-        msg = "Give ID or Reply To message of whom you want to remove from Sudo"
+        msg = "айди дай сука"
     await sendMessage(message, msg)
 
 
