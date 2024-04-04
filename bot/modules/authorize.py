@@ -18,12 +18,12 @@ async def authorize(client, message):
     else:
         id_ = message.chat.id
     if id_ in user_data and user_data[id_].get("is_auth"):
-        msg = "Already Authorized!"
+        msg = "Авторизовано!"
     else:
         update_user_ldata(id_, "is_auth", True)
         if DATABASE_URL:
             await DbManager().update_user_data(id_)
-        msg = "Authorized"
+        msg = "Авторизовано"
     await sendMessage(message, msg)
 
 
@@ -39,7 +39,7 @@ async def unauthorize(client, message):
         update_user_ldata(id_, "is_auth", False)
         if DATABASE_URL:
             await DbManager().update_user_data(id_)
-        msg = "неавторизован
+        msg = "неавторизован"
     else:
         msg = "уже не авторизован"
     await sendMessage(message, msg)
